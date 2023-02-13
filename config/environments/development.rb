@@ -29,6 +29,8 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
+  #deprecated CF tokens
+  config.load_defaults 7.0
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -43,6 +45,9 @@ Rails.application.configure do
 
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
+  
+  # Migrate to the new connection handling
+  config.active_record.legacy_connection_handling = false
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large

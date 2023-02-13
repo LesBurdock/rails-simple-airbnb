@@ -1,0 +1,4 @@
+{
+    "ruby.rubocop.executePath": "\"ruby.rubocop.executePath\": \"\",",
+    "ruby.rubocop.configFilePath": "\"ruby.rubocop.configFilePath\": \"/path/to/config/.rubocop.yml\","
+}
