@@ -1,10 +1,12 @@
 class FlatsController < ApplicationController
 def index
   @flats = Flat.all
+  render json: @flats
 end
 
 def show
   @flat = Flat.find(params[:id])
+  render json: @flat
 end
 
 def new
@@ -14,7 +16,7 @@ end
 def create
   @flat = Flat.new(flat_params)
   @flat.save
-  redirect_to flat_path(@flat)
+  render json: @flat
 end
 
 def edit
@@ -24,13 +26,13 @@ end
 def update
   @flat = Flat.find(params[:id])
   @flat.update(flat_params)
-  # @flat.save
-  redirect_to flats_path
+  render json: @flat
 end
 
 def destroy
   @flat.find(params[:id])
   @flat.destroy
+  head :no_content, status: :ok
 end
 
 private
