@@ -1,14 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
-import FlatCard from "./components/flatCard"
+import 'flowbite';
+import FlatCard from "./components/flatCard";
+import NavBar from "./components/navbar";
+import CardCarousel from "./components/carousel";
 
 function App() {
   return (
     <div className="App">
+      <NavBar></NavBar>
       <div className="mainContainer">
-          <h1>some flats</h1>
-          <FlatCard></FlatCard>
-        </div>
+        <FlatCard></FlatCard>
+      </div>
     </div>
   );
 }

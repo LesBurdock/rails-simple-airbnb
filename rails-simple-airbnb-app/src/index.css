@@ -7,7 +7,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@layer base {
+  img {
+    object-fit: cover;
+    height: 45vh;
+  }
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
