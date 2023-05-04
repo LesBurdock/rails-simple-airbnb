@@ -1,19 +1,23 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import 'flowbite';
-import FlatCard from "./components/flatCard";
 import NavBar from "./components/navbar";
-import CardCarousel from "./components/carousel";
+import Home from "./pages/Home";
+import FlatDetails from './pages/flat_details';
 
 function App() {
   return (
     <div className="App">
-      <NavBar></NavBar>
       <div className="mainContainer">
-        <FlatCard></FlatCard>
+        <NavBar></NavBar>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/:id" element={<FlatDetails/>} exact></Route>
+        </Routes>
       </div>
     </div>
   );
 }
 
 export default App;
+

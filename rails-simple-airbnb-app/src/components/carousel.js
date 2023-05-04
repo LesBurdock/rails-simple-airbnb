@@ -1,31 +1,37 @@
-import React, { Component } from "react";
-import { Carousel } from 'flowbite-react'
+import React from "react";
+import {Carousel} from "flowbite-react";
 
-const CardCarousel = () => {
-    return (  <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
-    <Carousel>
+const CardCarousel = (props) => {
+  console.log(props.flatPic);
+  return (
+    <div className="h-56 w-full object-cover object-center sm:h-64 xl:h-80 2xl:h-96">
+    <Carousel
+      leftControl=""
+      rightControl=""
+    >
       <img
-        src="https://flowbite.com/docs/images/carousel/carousel-1.svg"
-        alt="..."
+        src={props.flatPic}
+        alt="pic1"
       />
       <img
-        src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
-        alt="..."
+         src={props.flatPic}
+         alt="pic1"
       />
       <img
-        src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
-        alt="..."
+         src={props.flatPic}
+         alt="pic1"
       />
       <img
-        src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
-        alt="..."
+         src={props.flatPic}
+         alt="pic1"
       />
       <img
-        src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
-        alt="..."
+         src={props.flatPic}
+         alt="pic1"
       />
     </Carousel>
-  </div>);
+  </div>
+  );
 };
 
 export default CardCarousel;
