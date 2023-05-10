@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2019_12_12_122613) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_09_173416) do
   create_table "flats", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.text "description"
     t.integer "price_per_night"
     t.integer "number_of_guests"
-    t.string "pic_url"
+    t.json "pic_url", default: []
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
   end

@@ -1,6 +1,6 @@
 import * as React from "react";
 import {useEffect, useState} from "react";
-import FlatCard from "../components/FlatCard.js";
+import FlatCard from "../components/flatCard.js";
 import axios from "axios";
   
   export default function Home() {
