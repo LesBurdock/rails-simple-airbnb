@@ -31,6 +31,7 @@ Rails.application.configure do
   config.active_storage.service = :local
   #deprecated CF tokens
   config.load_defaults 7.0
+  config.active_storage.service = :cloudinary
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
