@@ -13,6 +13,10 @@ gem 'puma', '~> 3.11'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 
+# Direct uploading from the browser is performed using XHR CORS requests. 
+#Make sure you are using the gem ‘rack-cors’ in your Rails backend and uncommented out code in cors.rb file, changing origins to ‘*’.)
+gem 'rack-cors', :require => 'rack/cors'
+
 # use sprockets
 gem 'sprockets', '~> 4.0' 
 
@@ -35,6 +39,8 @@ gem 'jbuilder', '~> 2.5'
 
 # use webdriver instead of chromedriver
 gem 'webdrivers', '~> 5.0'
+#photo storage 
+gem "cloudinary"
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -53,6 +59,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'faker'
+  gem "dotenv-rails"
 end
 
 group :development do

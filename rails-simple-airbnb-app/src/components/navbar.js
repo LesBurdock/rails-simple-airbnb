@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Dropdown, Avatar } from 'flowbite-react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import airbnblogo from "../airbnblogo.svg";
 
 
@@ -29,7 +29,7 @@ const NavBar = () => {
               name@flowbite.com
             </span>
           </Dropdown.Header>
-          <Dropdown.Item>Dashboard</Dropdown.Item>
+          <Dropdown.Item><NavLink to={`/addFlat`}>Dashboard</NavLink></Dropdown.Item>
           <Dropdown.Item>Settings</Dropdown.Item>
           <Dropdown.Item>Earnings</Dropdown.Item>
           <Dropdown.Divider />

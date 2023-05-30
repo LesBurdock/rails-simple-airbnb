@@ -1,5 +1,8 @@
 class FlatsController < ApplicationController
-def index
+  skip_before_action :verify_authenticity_token
+  
+
+  def index
   @flats = Flat.all
   render json: @flats
 end
@@ -14,10 +17,18 @@ def new
 end
 
 def create
-  @flat = Flat.new(flat_params)
-  @flat.save
+
+  photos = Cloudinary::Uploader.upload(params[:photos], 
+    use_filename:true, 
+    unique_filename:false,
+    overwrite:true
+    )
+
+    @flat = Flat.create(flat_params)
+    @flat.photos.attach(flat_params[photos:photos["url"]])
+
   render json: @flat
-end
+  end
 
 def edit
   @flat = Flat.find(params[:id])
@@ -38,7 +49,7 @@ end
 private
 
 def flat_params
-  params.require(:flat).permit(:name, :address, :description, :price_per_night, :number_of_guests, :pic_url)
+  params.permit(:flat,:name, :address, :description, :price_per_night, :number_of_guests, :pic_url, photos:[])
 end
 
 end
