@@ -10,7 +10,7 @@ require 'faker'
 Flat.destroy_all
 
 
-flats = Flat.create(
+flat1 = Flat.create(
     name: 'Light and Bright',
     address: Faker::Address.full_address,
     description: 'a pretty and warm home with lots of space and comfort',
@@ -24,7 +24,7 @@ flats = Flat.create(
   Flat.create( 
     name: 'Family Home', 
     address: Faker::Address.full_address, 
-    description: 'Green field and beautiful animals. Comfotable home with 5 beds', 
+    description: 'Green field and beautiful animals. Comfortable home with 5 beds', 
     price_per_night: Faker::Number.decimal(l_digits: 4), 
     number_of_guests: Faker::Number.between(from: 1, to: 5), 
     pic_url: ["https://images.pexels.com/photos/1438248/pexels-photo-1438248.jpeg?auto=compress&cs=tinysrgb&w=1200",

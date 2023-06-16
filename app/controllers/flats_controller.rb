@@ -1,5 +1,9 @@
+require 'open-uri'
+
 class FlatsController < ApplicationController
   skip_before_action :verify_authenticity_token
+
+  
   
 
   def index
@@ -18,16 +22,22 @@ end
 
 def create
 
-  photos = Cloudinary::Uploader.upload(params[:photos], 
+  cloudinaryreturn = Cloudinary::Uploader.upload(params[:photos], 
     use_filename:true, 
     unique_filename:false,
     overwrite:true
     )
 
-    @flat = Flat.create(flat_params)
-    @flat.photos.attach(flat_params[photos:photos["url"]])
+  # I want to add cloudinaryreturn["url"] to a newly created flat by pushing it into an array called pic_url
+  flat_params_with_url = flat_params.merge(pic_url: [cloudinaryreturn["url"]])
+  @flat = Flat.create(flat_params_with_url)
+
+    # active storage if i want to add a blob can use the following but not sure its supper helpful.
+    # cloudinaryurl= URI.parse(cloudinaryreturn["url"]).open
+    # @flat.photos.attach(io: cloudinaryurl, filename: "face.jpg", content_type: "image/jpg")
 
   render json: @flat
+  
   end
 
 def edit
@@ -49,7 +59,7 @@ end
 private
 
 def flat_params
-  params.permit(:flat,:name, :address, :description, :price_per_night, :number_of_guests, :pic_url, photos:[])
+  params.permit(:flat,:name, :address, :description, :price_per_night, :number_of_guests, pic_url:[], photos:[])
 end
 
 end
