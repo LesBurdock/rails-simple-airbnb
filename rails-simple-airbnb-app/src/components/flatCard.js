@@ -8,6 +8,7 @@ export default function FlatCard(props) {
       <div>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {props.allflats.map((flat) => {
+            console.log(flat);
             return (
               <div className="flatobjects" key={flat.id}>
                 <div className="max-w-sm">
@@ -16,7 +17,6 @@ export default function FlatCard(props) {
                       <Carousel slide={false}>
                         <img src={flat.pic_url[0]} alt="..." />
                         <img src={flat.pic_url[1]} alt="..." />
-                        <img src={flat.pic_url[2]} alt="..." />
                       </Carousel>
                     </div>
                     <Link to={`/${flat.id}`}>
