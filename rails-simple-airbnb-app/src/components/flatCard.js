@@ -15,8 +15,9 @@ export default function FlatCard(props) {
                   <div className="mx-5 mt-5">
                     <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
                       <Carousel slide={false}>
-                        <img src={flat.pic_url[0]} alt="..." />
-                        <img src={flat.pic_url[1]} alt="..." />
+                        <img src={flat.pic_url[0]} alt="..." className="flex h-full items-center justify-center object-cover"/>
+                        <img src={flat.pic_url[1]} alt="..." className="flex h-full items-center justify-center object-cover" />
+                        <img src={flat.pic_url[2]} alt="..." className="flex h-full items-center justify-center object-cover"/>
                       </Carousel>
                     </div>
                     <Link to={`/${flat.id}`}>

@@ -8,7 +8,7 @@ const NavBar = () => {
   return (
     <Navbar fluid={true} rounded={true}>
         <NavLink to="/">
-          <img src={airbnblogo} className="mr-3 h-10 sm:h-11" alt="Airbnb Logo" />
+          <img src={airbnblogo} className="mr-3 lg:h-25 md:h-20 sm:h-11" alt="Airbnb Logo" />
         </NavLink>
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white"></span>
       <div className="flex md:order-2">
