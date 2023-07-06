@@ -14,11 +14,12 @@ import { useNavigate } from "react-router-dom";
         e.preventDefault()
         // Handle validations
         const formData = new FormData();
-        formData.append("photos", photos);
+        formData.append("photo1", photo1);
+        formData.append("photo2", photo2);
+        formData.append("photo3", photo3);
         formData.append("name", name);
         formData.append("address", address);
         formData.append("description", description);
-
 
         axios
           .post("/api/version1/flats/", formData, {
@@ -40,8 +41,9 @@ import { useNavigate } from "react-router-dom";
       const [name, setName] = useState("")
       const [address, setAddress] = useState("")
       const [description, setDescription] = useState("")
-      const [photos, setPhotos]= useState(null)
-
+      const [photo1, setPhoto1]= useState(null)
+      const [photo2, setPhoto2]= useState(null)
+      const [photo3, setPhoto3]= useState(null)
 
       return (
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
@@ -84,8 +86,8 @@ import { useNavigate } from "react-router-dom";
             <FileInput
               id="file1"
               helperText="Pictures of the listing"
-              type="file" accept="image/*" name={photos}
-              onChange={e => setPhotos(e.target.files[0])}
+              type="file" accept="image/*" name={photo1}
+              onChange={e => setPhoto1(e.target.files[0])}
             />
           </div>
           <div id="fileUpload">
@@ -93,9 +95,10 @@ import { useNavigate } from "react-router-dom";
               <Label htmlFor="file2" value="Upload file" />
             </div>
             <FileInput
-              id="file2"
+              id="file1"
               helperText="Pictures of the listing"
-              type="file" accept="image/*" name="photo"
+              type="file" accept="image/*" name={photo2}
+              onChange={e => setPhoto2(e.target.files[0])}
             />
           </div>
           <div id="fileUpload">
@@ -103,9 +106,10 @@ import { useNavigate } from "react-router-dom";
               <Label htmlFor="file3" value="Upload file" />
             </div>
             <FileInput
-              id="file3"
+              id="file1"
               helperText="Pictures of the listing"
-              type="file" accept="image/*" 
+              type="file" accept="image/*" name={photo3}
+              onChange={e => setPhoto3(e.target.files[0])}
             />
           </div>
           <Button type="submit">Submit</Button>

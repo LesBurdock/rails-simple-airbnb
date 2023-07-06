@@ -23,11 +23,11 @@ import { useParams, Link } from 'react-router-dom';
             <div>
                 <h1 className="py-3">{flat.name}</h1>
             </div>
-              <div className="container m-auto grid grid-cols-1 lg:grid-cols-4 grid-rows-2 gap-4">
+              <div className="grid grid-rows-2 grid-cols-3 gap-4">
                 {flat.pic_url.map((photo,index)=>{
                 return(
-                  <div key={index} className="col-span-1 lg:col-span-2 row-span-2 row-end-auto">
-                  <img src={photo} alt="house" />
+                  <div key={index} className={index === 0 ? 'row-span-2 col-span-2' : 'row-span-1 col-span-1'} >
+                  <img src={photo} alt="house" className="w-full h-72 min-h-full object-cover" />
                  </div>
                 )}
                 )}
