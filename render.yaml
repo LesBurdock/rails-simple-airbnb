@@ -7,7 +7,7 @@ services:
   - type: web
     name: simple-airbnb-postgres-app
     runtime: ruby
-     buildCommand: "./render-build.sh"
+     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec rails s"
     envVars:
       - key: postgres://simple_airbnb_postgres_app_user:dwPjCgMo9LkCaU8ZJw4xWF2USWAKnyUq@dpg-cijuivenqql0l1udp330-a/simple_airbnb_postgres_app
