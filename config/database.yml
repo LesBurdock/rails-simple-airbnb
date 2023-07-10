@@ -43,8 +43,8 @@ test:
 
 production:
   <<: *default
-  database: mysite_production
-  username: mysite
+  database: simple_airbnb_postgres_app_production
+  username: simple_airbnb_postgres_app
   password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
 
   production:
