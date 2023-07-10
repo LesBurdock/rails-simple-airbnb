@@ -10,7 +10,7 @@ services:
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
-      - key: DATABASE_URL
+      - key: postgres://simple_airbnb_postgres_app_user:dwPjCgMo9LkCaU8ZJw4xWF2USWAKnyUq@dpg-cijuivenqql0l1udp330-a/simple_airbnb_postgres_app
         fromDatabase:
           name: simple-airbnb-postgres-app
           property: connectionString
