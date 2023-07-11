@@ -64,8 +64,9 @@ production:
   <<: *default
   database: simple_airbnb_postgres_app_production
   username: simple_airbnb_postgres_app
-  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
+  password: dwPjCgMo9LkCaU8ZJw4xWF2USWAKnyUq
 
   production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  url: "postgres://simple_airbnb_postgres_app_user:dwPjCgMo9LkCaU8ZJw4xWF2USWAKnyUq@dpg-cijuivenqql0l1udp330-a/simple_airbnb_postgres_app"
+
