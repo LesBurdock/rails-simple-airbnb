@@ -53,7 +53,7 @@ test:
 # On Heroku and other platform providers, you may have a full connection URL
 # available as an environment variable. For example:
 #
-  DATABASE_URL="postgres://simple_airbnb_postgres_app_user:dwPjCgMo9LkCaU8ZJw4xWF2USWAKnyUq@dpg-cijuivenqql0l1udp330-a/simple_airbnb_postgres_app"
+# DATABASE_URL="postgres://simple_airbnb_postgres_app_user:dwPjCgMo9LkCaU8ZJw4xWF2USWAKnyUq@dpg-cijuivenqql0l1udp330-a/simple_airbnb_postgres_app"
 #
 # You can use this database configuration with:
 #
