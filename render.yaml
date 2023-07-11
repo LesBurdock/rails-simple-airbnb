@@ -1,5 +1,5 @@
 databases:
-  - name: postgres
+  - name: simple-airbnb-postgres-app
     databaseName: simple-airbnb-postgres-app
     user: simple_airbnb_postgres_app_user
 
