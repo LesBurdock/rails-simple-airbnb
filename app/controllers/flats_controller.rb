@@ -3,9 +3,8 @@ class FlatsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   
-  
 
-  def index
+def index
   @flats = Flat.all
   render json: @flats
 end

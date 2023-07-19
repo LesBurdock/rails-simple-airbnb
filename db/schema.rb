@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_05_11_084540) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -40,12 +43,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_084540) do
   end
 
   create_table "flats", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
+    t.text "name"
+    t.text "address"
     t.text "description"
-    t.integer "price_per_night"
+    t.text "price_per_night"
     t.integer "number_of_guests"
-    t.json "pic_url", default: []
+    t.string "pic_url", array: true
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
   end
