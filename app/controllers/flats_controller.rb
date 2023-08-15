@@ -2,8 +2,6 @@
 class FlatsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-  
-
 def index
   @flats = Flat.all
   render json: @flats
@@ -19,22 +17,29 @@ def new
 end
 
 def create
-  photo1 = params[:photo1]
-  photo2 = params[:photo2]
-  photo3 = params[:photo3]
+photoarray = []
+unless params[:photo1].nil? 
+  photoarray.push(params[:photo1])
+end
 
-  photoarray = []
+unless params[:photo2].nil? 
+  photoarray.push(params[:photo2])
+end
+
+unless params[:photo3].nil? 
+  photoarray.push(params[:photo3])
+end
+
   urlArray = []
-  
-  photoarray.push(photo1,photo2,photo3)
-        photoarray.each do |element|
-        cloudinaryreturn = Cloudinary::Uploader.upload(element, 
-          use_filename:true, 
-          unique_filename:false,
-          overwrite:true
-          )
-        urlArray.push(cloudinaryreturn["url"])
-        end
+
+  photoarray.each do |element|
+    cloudinaryreturn = Cloudinary::Uploader.upload(element, 
+        use_filename:true, 
+        unique_filename:false,
+        overwrite:true
+        )
+      urlArray.push(cloudinaryreturn["url"])
+     end
 
   # I want to add cloudinaryreturn["url"] to a newly created flat by pushing it into an array called pic_url
   flat_params_with_url = flat_params.merge(pic_url: urlArray)
