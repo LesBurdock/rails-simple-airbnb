@@ -1,5 +1,5 @@
 const LOCAL_API_BASE_URL = "http://localhost:4000"; // Set to your local Rails API address
-const PRODUCTION_API_BASE_URL = "https://simple-airbnb-postgres-app-2kvm.onrender.com/"; // Set to your production Rails API domain
+const PRODUCTION_API_BASE_URL = "https://simple-airbnb-postgres-app-2kvm.onrender.com"; // Set to your production Rails API domain
 
 let API_BASE_URL;
 
