@@ -1,5 +1,6 @@
 import * as React from "react";
 import {useEffect, useState} from "react";
+import {API_BASE_URL} from "../config";
 import FlatCard from "../components/flatCard.js";
 import axios from "axios";
   
@@ -8,7 +9,7 @@ import axios from "axios";
 
     useEffect(() => {
       axios
-        .get("/api/version1/flats")
+        .get(`${API_BASE_URL}/api/version1/flats`)
         .then((response) => {
           setAllFlats(response.data);
         })
