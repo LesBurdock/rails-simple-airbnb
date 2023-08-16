@@ -62,6 +62,3 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: simple-airbnb-postgres-app-2kvm
-  username: simple-airbnb-postgres-app-2kvm
-  password: <%= ENV['DATABASE_PASSWORD'] %>
