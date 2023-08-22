@@ -1,24 +1,30 @@
-# README
+README
+This is a ruby on rails app with a react frontend, using tailwind and flowbite for styling. Cloudinary is used for the image uploads. Database is postgreSQL.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Versions:
+Rails v 7.0.4.3
+Ruby version 3.2
+React 18.2
 
-Things you may want to cover:
+dependencies:
+Tailwind
+Flowbite
+axios
 
-* Ruby version
+uploads images to Cloudinary and stores link in the database
 
-* System dependencies
+Quick start:
+Clone repo
+Gem install
+Bundle install
+Rails db:create
+rails db:migrate
+Rails db:seed
+yarn install
 
-* Configuration
+Run project locally:
 
-* Database creation
+Rails server start: rails s
+React server start: yarn --cwd rails-simple-airbnb-app start
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Deploys on Render automatically by pushing to branch hosting
