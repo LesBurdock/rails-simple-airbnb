@@ -1,12 +1,12 @@
 class CreateFlats < ActiveRecord::Migration[5.2]
   def change
     create_table :flats do |t|
-      t.string :name
-      t.string :address
+      t.text :name
+      t.text :address
       t.text :description
-      t.integer :price_per_night
+      t.text :price_per_night
       t.integer :number_of_guests
-      t.string :pic_url
+      t.string :pic_url, array: true
 
       t.timestamps
     end

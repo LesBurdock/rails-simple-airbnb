@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Dropdown, Avatar } from 'flowbite-react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import airbnblogo from "../airbnblogo.svg";
 
 
@@ -8,7 +8,7 @@ const NavBar = () => {
   return (
     <Navbar fluid={true} rounded={true}>
         <NavLink to="/">
-          <img src={airbnblogo} className="mr-3 lg:h-25 md:h-20 sm:h-11" alt="Airbnb Logo" />
+          <img src={airbnblogo} className="mr-3 lg:h-19 md:h-19 sm:h-11" alt="Airbnb Logo" />
         </NavLink>
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white"></span>
       <div className="flex md:order-2">

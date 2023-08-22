@@ -14,15 +14,15 @@ import { useNavigate } from "react-router-dom";
         e.preventDefault()
         // Handle validations
         const formData = new FormData();
-        formData.append("photo1", photo1);
-        formData.append("photo2", photo2);
-        formData.append("photo3", photo3);
+        if(photo1){formData.append("photo1", photo1)};
+        if(photo2){formData.append("photo2", photo2)};
+        if(photo3){formData.append("photo3", photo3)};
         formData.append("name", name);
         formData.append("address", address);
         formData.append("description", description);
 
         axios
-          .post("/api/version1/flats/", formData, {
+          .post("api/version1/flats/", formData, {
             headers: {
               "Content-Type": "multipart/form-data",
             },
@@ -95,7 +95,7 @@ import { useNavigate } from "react-router-dom";
               <Label htmlFor="file2" value="Upload file" />
             </div>
             <FileInput
-              id="file1"
+              id="file2"
               helperText="Pictures of the listing"
               type="file" accept="image/*" name={photo2}
               onChange={e => setPhoto2(e.target.files[0])}
@@ -106,7 +106,7 @@ import { useNavigate } from "react-router-dom";
               <Label htmlFor="file3" value="Upload file" />
             </div>
             <FileInput
-              id="file1"
+              id="file3"
               helperText="Pictures of the listing"
               type="file" accept="image/*" name={photo3}
               onChange={e => setPhoto3(e.target.files[0])}

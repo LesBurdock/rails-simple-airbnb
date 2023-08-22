@@ -1,3 +1,4 @@
+
 # README
 This is a ruby on rails app with a react frontend, using tailwind and flowbite for styling. 
 Cloudinary is used for the image uploads. Database is postgreSQL.
