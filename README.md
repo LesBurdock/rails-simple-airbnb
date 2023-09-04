@@ -15,9 +15,6 @@ Flowbite<br />
 axios<br />
 
 
-uploads images to Cloudinary and stores link in the database
-
-
 **Quick start:**<br />
 Clone repo<br />
 Gem install<br /> 
@@ -36,4 +33,17 @@ React server start: yarn --cwd rails-simple-airbnb-app start<br />
 
 
 Deploys on Render automatically by pushing to branch hosting <br />
+Render deploy is successful - some problems with live hosting in terms of ruby api connection.
 
+
+**Key features:**<br />
+
+fun project to work on basic Ruby and React<br />
+
+This is a basic airbnb clone where you can display a holiday home, view details of the home., and create a new holiday home.<br />
+
+no authentication or log in, just a Ruby API<br />
+
+Basic features of the site can create a new flat and upload images and photos. <br />
+
+uploads images to Cloudinary and stores link in the database<br />
